@@ -1,1 +1,1 @@
-![](./content.svg)
+![](content.svg)
