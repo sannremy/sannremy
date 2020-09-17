@@ -1,1 +1,1 @@
-![](https://raw.githubusercontent.com/srchea/srchea/master/hi-traveller.jpg)
+![](https://raw.githubusercontent.com/srchea/srchea/master/content.svg)
