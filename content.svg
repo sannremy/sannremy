@@ -1,7 +1,103 @@
-<svg fill="none" viewBox="0 0 120 120" width="238" height="120" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" viewBox="0 0 600 600" width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+      --cube-width: 200px;
+      --spin-duration: 10s;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      }
+      100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+      }
+    }
+
+    .face img {
+      width: 100%;
+    }
+
+    .contain {
+      perspective: 800px;
+      position: absolute;
+    }
+
+    .main {
+      position: relative;
+      width: var(--cube-width);
+      height: var(--cube-width);
+      margin: var(--cube-width);
+      transform-style: preserve-3d;
+      transform-origin: center center calc(var(--cube-width) / 2);
+      backface-visibility: visible;
+      animation: spin var(--spin-duration) infinite linear;
+    }
+
+    .top, .right, .left, .bottom, .front, .back {
+      position: absolute;
+      width: var(--cube-width);
+      height: var(--cube-width);
+    }
+
+    .top {
+      top: -var(--cube-width);
+      transform-origin : 50% 100%;
+      transform: rotateX(-90deg);
+    }
+
+    .bottom {
+      bottom: -var(--cube-width);
+      transform-origin: 100% 0%;
+      transform: rotateX(90deg);
+    }
+
+    .left {
+      left: -var(--cube-width);
+      transform-origin: 100% 0%;
+      transform: rotateY(90deg);
+    }
+
+    .right {
+      right: -var(--cube-width);
+      transform-origin: 0% 0%;
+      transform: rotateY(-90deg);
+    }
+
+    .front {
+      transform-origin: 0% 0%;
+      transform: translateZ(var(--cube-width));
+    }
+
+    .back {
+      transform-origin: 0% 0%;
+      transform: rotateY(180deg) translateX(calc(-1 * var(--cube-width)));
+    }
+  </style>
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
-      <h1>Hello</h1>
+      <div class="contain">
+            <div class="main">
+                <div class="face front">
+                  <img src="https://raw.githubusercontent.com/srchea/srchea/master/developers.jpg" />
+                </div>
+                <div class="face back">
+                  <img src="https://raw.githubusercontent.com/srchea/srchea/master/developers.jpg" />
+                </div>
+                <div class="face top">
+                  <img src="https://raw.githubusercontent.com/srchea/srchea/master/developers.jpg" />
+                </div>
+                <div class="face right">
+                  <img src="https://raw.githubusercontent.com/srchea/srchea/master/developers.jpg" />
+                </div>
+                <div class="face left">
+                  <img src="https://raw.githubusercontent.com/srchea/srchea/master/developers.jpg" />
+                </div>
+                <div class="face bottom">
+                  <img src="https://raw.githubusercontent.com/srchea/srchea/master/developers.jpg" />
+                </div>
+            </div>
+        </div>
     </div>
   </foreignObject>
 </svg>
